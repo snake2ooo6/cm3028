@@ -12,8 +12,15 @@ $error = 0;
 			header('Location:signin.php?error=1');
 			exit;
 		}
-	 
+	
 	 $row = mysqli_fetch_array($query);
+	 	
+		if( $row['status'] == 0){
+			header('Location:signin.php?error=2');
+			exit;
+		}
+	 
+	
 	 
 	 $_SESSION['user']['id'] = $row['id'];		 
 	 $_SESSION['user']['email'] = $row['email'];	

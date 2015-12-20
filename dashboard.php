@@ -49,8 +49,13 @@ if(!isset($_SESSION['user'])){
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                <br>
+                <br>
+                <br>
+                <br>
                     <h1 class="section-heading">Dashboard</h1>
-                    <p class="lead section-lead">You can post new adventure by clicking on the link at the top navigation</p>
+                    
+                    <p class="lead section-lead"> Welcome <?php echo $_SESSION['user']['name']; ?>.You can post new adventure by clicking on the link at the top navigation</p>
                 </div>
             </div>
         </div>

@@ -57,7 +57,13 @@
                     <span class="glyphicon glyphicon-remove"></span><strong> Error! Wrong email or password.</strong>
                 </div>
 									
+							<?php	}  else if(isset($_GET['error']) and $_GET['error']=='2'){?>
+									<div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-remove"></span><strong> Error! User is not authorized by the administrator.</strong>
+                </div>
+									
 							<?php	}
+ 
                 
                 ?>
                 <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>

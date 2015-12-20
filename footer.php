@@ -11,11 +11,6 @@
         <!-- /.container -->
     </footer>
 
-    <!-- jQuery -->
-    <script src="startbootstrap-full-width-pics-1.0.4/startbootstrap-full-width-pics-1.0.4/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="startbootstrap-full-width-pics-1.0.4/startbootstrap-full-width-pics-1.0.4/js/bootstrap.min.js"></script> 
      <script type="text/javascript">
 				var pic_number = 1;
 				function add_more(){

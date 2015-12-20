@@ -16,11 +16,19 @@ session_start();
     <title>CM3028: WEB APPLICATION DEVELOPMENT</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="./css/full-width-pics.css" rel="stylesheet">
-    	<link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="screen" />
+    <!-- bjqs.css contains the *essential* css needed for the slider to work -->
+    <link rel="stylesheet" href="css/bjqs.css">
+
+   
+    <!-- demo.css contains additional styles used to set up this demo page - not required for the slider --> 
+    <link rel="stylesheet" href="css/demo.css">
+
+    <!-- load jQuery and the plugin -->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/bjqs-1.3.min.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,12 +97,10 @@ adventure.`status` = 1 ";
 			
 							 ?> 
                 <div class="col-lg-12">
-                <div class="loading">
+               
 
-	<div id="main" role="main">
-      <section class="slider">
-        <div class="flexslider">
-          <ul class="slides">
+        <div id="banner-slide">
+          <ul class="bjqs">
             <?php
             
 							while( $row2 = mysqli_fetch_array($query2)){
@@ -102,20 +108,18 @@ adventure.`status` = 1 ";
 						?>
             
             <li>
-  	    	    <img src="./uploads/<?php echo $row2['name'];?>" height="100%" />
+  	    	    <img src="uploads/<?php echo $row2['name'];?>">
   	    		</li>
           <?php }?>
           
           </ul>
         </div>
-      </section>
+ 
 
-  </div>
-</div>
 <?php }?>
                 </div>
-                <div class="row"> 
-                <div class="col-lg-12" style="height:10px;" ></div></div>
+                </div>
+               
                 
                 <div class="row">
                     <div class="col-lg-12" >
@@ -201,7 +205,7 @@ comments.id DESC' ;
             </div>
             <?php if(isset($_SESSION['user'])){?>
             			<div class="row"> 
-                  	<div class="col-lg-12" >
+                  	<div class="col-lg-12 col-xs-offset-1" >
                   	
                     
                 <form role="form" action="comments_form.php" method="post">
@@ -223,34 +227,40 @@ comments.id DESC' ;
             <?php }?>
                         
             </div>
-            
+  </section>          
             
             
     <?php include('footer.php');?>
+ 
+      <script>
+        jQuery(document).ready(function($) {
+          
+          $('#banner-slide').bjqs({
+            animtype      : 'slide',
+            width         : 1000,
+						height         : 1000,
+            responsive    : true,
+            randomstart   : true,
+						animspeed : 3000 
+          });
+          
+        });
+      </script>
+      <script src="js/libs/jquery.secret-source.min.js"></script>
 
+    <script>
+    jQuery(function($) {
+
+        $('.secret-source').secretSource({
+            includeTag: false
+        });
+
+    });
+    </script>
 </body>
  <!-- jQuery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
 
-  <!-- FlexSlider -->
-  <script defer src="./js/jquery.flexslider.js"></script>
 
-  <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
-  </script>
-  
-   <script type="text/javascript" src="./js/shCore.js"></script>
-  <script type="text/javascript" src="./js/shBrushXml.js"></script>
-  <script type="text/javascript" src="./js/shBrushJScript.js"></script>
+<!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+
 </html>

@@ -15,7 +15,7 @@ adventure.id
 FROM
 adventure
 WHERE
-`adventure`.`title` LIKE '%$string%' ";
+`adventure`.`tags` LIKE '%$string%' ";
 		
 		break;
 	case 2:
