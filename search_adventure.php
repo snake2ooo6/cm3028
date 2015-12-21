@@ -73,7 +73,7 @@ include('./conn.php');
                         </div>
                         </div>
 
-                <input type="submit" name="submit" id="submit" value="Save Comments" class="btn btn-secondery pull-right">
+                <input type="submit" name="submit" id="submit" value="Search Adventure" class="btn btn-secondery pull-right">
         </form>
         
   
